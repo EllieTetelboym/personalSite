@@ -1,19 +1,17 @@
+/* General styles for all screen sizes */
+.siteBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 body {
   background-image: url("https://cdn.wallpapersafari.com/86/92/OxsnYo.gif");
   color:darkmagenta;
   font-family: sans-serif;
 }
 
-.siteBox {
-  display: flex;
-  justify-content: space-between; /* Adjust this based on your preference */
-  align-items: flex-start; /* Align items to the top of the container */
-  margin-left: 200px;
-  margin-right: 200px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  overflow: hidden; /* Prevent margin collapsing */
-}
+
 
 img {
   width: 80%;
@@ -30,17 +28,14 @@ img {
   justify-content: space-evenly;
 }
 
-.photoAndLinks {
-  display: flex;
-  flex-direction: row;
-  font-weight: bold;
+.leftColumn {
+  flex: 1;
+  padding: 20px;
 }
 
-.leftColumn,
 .rightColumn {
   flex: 1;
-  padding: 10px;
-  box-sizing: border-box; /* Ensure padding is included in the element's total width */
+  padding: 20px;
 }
 
 section {
@@ -52,34 +47,98 @@ section {
   font-size: 11px;
 }
 
-.finePrint {
-  font-size: 10px;
-}
-
-.projects {
+.photoLayout {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-.textMargins{
+.photoAndLinks {
+  display: flex;
+  flex-direction: row;
+  font-weight: bold;
+}
+
+.photoAndLinks img {
+  max-width: 100%;
+  height: auto;
+}
+
+.textMargins {
   margin-top: 10px;
 }
 
+.finePrint {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.marginBottom {
+  margin-bottom: 10px;
+}
+
 .link {
-  background-image: url("https://i.imgur.com/qcUvkqn.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
   text-decoration: none;
-  height: 43px;
-  width: 86px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  color:aliceblue;
+  color: darkmagenta;
+  font-size: 17px;
 }
 
 .buttons {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+@media screen and (min-width: 1000px) {
+.siteBox {
+  justify-content: space-between; /* Adjust this based on your preference */
+  align-items: flex-start; /* Align items to the top of the container */
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  overflow: hidden; /* Prevent margin collapsing */
+}
+}
+
+/* Media queries for mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .siteBox {
+    flex-direction: column;
+  }
+
+  .leftColumn,
+  .rightColumn {
+    flex: initial;
+    padding: 10px;
+  }
+
+  .photoAndLinks {
+    flex-direction: row;
+  }
+
+  .photoAndLinks img {
+    margin-right: 10px;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+  .textMargins {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .projects iframe {
+    height: 250px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
 }
